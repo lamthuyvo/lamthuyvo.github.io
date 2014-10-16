@@ -9,6 +9,10 @@ body {
   	font-smooth: always;
 }
 
+code{
+	color: #D58900;
+}
+
 a {
 	color:#00AF77;
 	text-decoration: none;

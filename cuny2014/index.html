@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="css/fonts.css" type="text/css"/>
     <link rel="stylesheet" href="css/navbar.css" type="text/css"/>
     <link rel="stylesheet" href="css/structure-styles.css" type="text/css"/>
-    <link rel="stylesheet" href="css/thirdparty/jquery.ui.all.css" type="text/css"/>
     
     <script src="js/thirdparty/jquery-1.9.1.js"></script>
     <script src="js/thirdparty/jquery.ui.core.js"></script>
@@ -25,20 +24,23 @@
 <body>
 
     <!-- Top nav bar -->
-    <div id="navigation">
-        <ul>
+    <nav id="navigation">
+        <ul class="menu">
             <img src="images/tiny_computer-01.svg">
-            <li><a href="index.html">CUNY 2014 Fall syllabus</a>
-                <!-- <ul class="submenu">
-                    <li>Subitem 1</li>
-                    <li>Subitem 2</li>
-                </ul>  -->
+            <li>
+                <a href="index.html">CUNY 2014 Fall syllabus</a>
+                <ul class="submenu">
+                    <li><a href="#objectives">Course Objectives</a></li>
+                    <li><a href="#outcomes">Course Outcomes</a></li>
+                    <li><a href="#logistics">Logistics</a></li>
+                    <li><a href="#lessons">Lesson Plan</a></li>
+                </ul> 
             </li>   
-            <!-- <li><a href="lessons.html">course lessons</a></li>
+            <li><a href="lessons.html">course lessons</a></li>
             <li><a href="material.html">material</a></li>
-            <li><a href="info.html">important info</a></li> -->
+            <li><a href="info.html">important info</a></li>
         </ul>
-    </div>
+    </nav>
 
     <!-- Main content -->
     <div id="top">
@@ -367,15 +369,16 @@
     <!-- End Main Content -->
 
     <!-- JavaScript -->
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>		
+    <script type="text/javascript" src="js/thirdparty/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>		
     <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
     <script type="text/javascript">
                 $(function() {
-                    $('ul.nav a').bind('click',function(event){
+                    $('.submenu a').bind('click',function(event){
                         var $anchor = $(this);
                         
                         $('html, body').stop().animate({
-                            scrollTop: $($anchor.attr('href')).offset().top
+                            scrollTop: $($anchor.attr('href')).offset(50).top
                         }, 1500,'easeInOutExpo');
                         /*
                         if you don't want to use the easing effects:

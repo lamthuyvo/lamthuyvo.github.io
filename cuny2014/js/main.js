@@ -1,3 +1,9 @@
 $(document).ready(function() {
-	$('#navigation');
+	$(".menu > li").mouseenter(function(){			
+		$(this).children().slideDown("fast");
+	});
+		
+	$(".menu > li").mouseleave(function(){		
+		$(".submenu").css("display", "none");
+	});	
 });

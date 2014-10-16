@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="format-detection" content="telephone=no">
+
+<head>
+    <title>How To Make Web Things That Tell Stories</title>
+
+	<link rel="stylesheet" href="css/main.css" type="text/css"/>
+    <link rel="stylesheet" href="css/fonts.css" type="text/css"/>
+    <link rel="stylesheet" href="css/navbar.css" type="text/css"/>
+    <link rel="stylesheet" href="css/structure-styles.css" type="text/css"/>
+    
+    <script src="js/thirdparty/jquery-1.9.1.js"></script>
+    <script src="js/thirdparty/jquery.ui.core.js"></script>
+    <script src="js/thirdparty/jquery.ui.widget.js"></script>
+    <script src="js/thirdparty/jquery.ui.accordion.js"></script>   
+    
+
+</head>
+
+<body>
+
+    <!-- Top nav bar -->
+    <nav id="navigation">
+        <ul class="menu">
+            <img src="images/tiny_computer-01.svg">
+            <li>
+                <a href="index.html">CUNY 2014 Fall syllabus</a>
+                <ul class="submenu">
+                    <li><a href="#objectives">Course Objectives</a></li>
+                    <li><a href="#outcomes">Course Outcomes</a></li>
+                    <li><a href="#logistics">Logistics</a></li>
+                    <li><a href="#lessons">Lesson Plan</a></li>
+                </ul> 
+            </li>   
+            <li><a href="lessons.html">course lessons</a></li>
+            <li><a href="material.html">material</a></li>
+            <li><a href="info.html">important info</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main content -->
+    <div id="top">
+    </div>
+    <div class="training-main-canvas-700">
+        <div class="training-col12" id="ftp">
+            <h1>Important information</h1>
+
+            <h2>FTP information</h2>
+            <p>Your work for this module will be hosted on the Journalism School’s Digital Storage server. This web hosting will be available to you for two years after you graduate–you should make plans to backup work you are proud of and find hosting for it off of campus servers.</p>
+
+            <p><abbr title="File Transfer Protocol">FTP</abbr> and S(ecure)<abbr title="File Transfer Protocol">FTP</abbr> are standard protocols. That means that there are many different software tools you can use to transfer files between computers using <abbr title="File Transfer Protocol">FTP</abbr>. Filezilla is just one of those tools. Fetch and Cyberduck are popular alternatives that many Apple users like. </p>
+
+            <p>When you open Filezilla, use the following settings to connect to digital storage:</p>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>&nbsp;</th>
+                  <th>&nbsp;</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Host</td>
+                  <td>digitalstorage.journalism.cuny.edu</td>
+                </tr>
+                <tr>
+                  <td>User</td>
+                  <td><em>Your SOJ network username</em></td>
+                </tr>
+                <tr>
+                  <td>Pass</td>
+                  <td><em>your network password</em></td>
+                </tr>
+                <tr>
+                  <td>Protocol</td>
+                  <td>SFTP</td>
+                </tr>
+                <tr>
+                  <td>Port</td>
+                  <td>22</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>If you get an error, Read it! Sometimes the error is a celar clue to what is going on upstream!</p>
+
+            <p>Everything you upload to Digital Storage will be available to the public at:</p>
+
+            <pre><code>http://digitalstorage.journalism.cuny.edu/{user.name}
+            </code></pre>
+
+            <h2 id="simplehttp">SimpleHTTP</h2>
+            <p>Some code that we’re using in this class will actually need to be delivered by a web server. You can create a miniature web server on the fly by running python’s <code>SimpleHTTPServer</code></p>
+
+            <p>Open a terminal, use <code>cd</code> to navigate to your data viz folder. Run <code>python -m SimpleHTTPServer</code> and then visit <a href="http://localhost:8000">http://localhost:8000</a></p>
+
+            <p>This launches a mini web server in that directory. We’ll do more fun things at the command line before the semester is over, but this is incredibly useful. </p>
+
+            <p>You can make this a bit easier with <a href="https://stackoverflow.com/questions/420456/open-terminal-here-in-mac-os-finder">System Prefs</a> – right click on any folder and say “new terminal at folder” – use <code>pwd</code> to see where you are. </p>
+        </div>
+
+
+
+    </div>
+    <!-- End Main Content -->
+
+    <!-- JavaScript -->
+    <script type="text/javascript" src="js/thirdparty/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>		
+    <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript">
+                $(function() {
+                    $('.submenu a').bind('click',function(event){
+                        var $anchor = $(this);
+                        
+                        $('html, body').stop().animate({
+                            scrollTop: $($anchor.attr('href')).offset(50).top
+                        }, 1500,'easeInOutExpo');
+                        /*
+                        if you don't want to use the easing effects:
+                        $('html, body').stop().animate({
+                            scrollTop: $($anchor.attr('href')).offset().top
+                        }, 1000);
+                        */
+                        event.preventDefault();
+                    });
+                });
+    </script>
+
+</body>

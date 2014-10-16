@@ -23,6 +23,15 @@ a:hover {
 
 }
 
+.tipsheet img{
+	border: solid 1px #cccccc;
+}
+
+
+.tipsheet img a:hover{
+	border: solid 1px #00AF77;
+}
+
 /* subhed styles */
 
 h1{
@@ -75,7 +84,8 @@ thead{
 	text-align: left;
 }
 
-.training-main-canvas-700 .training-col12{
+.training-main-canvas-700 .panel{
 	border-bottom: dotted 1px #00AF77;
 	padding-bottom: 1.5em;
+	padding-top: 1.5em;
 }

@@ -60,13 +60,12 @@ h2{
 
 h3{
 	font-family: "HelveticaNeue-Light", "Helvetica Neue Light","Helvetica Neue", Helvetica, Arial, sans-serif;
-  	-webkit-font-smoothing: antialiased;
-  	font-smooth: always;
-  	font-weight: 100;
-	font-size: 1.2em;
-	padding: 1% 0 1% 1%;
-	text-align:left;
-
+	-webkit-font-smoothing: antialiased;
+	font-smooth: always;
+	font-weight: 100;
+	font-size: 1.4em;
+	padding: 1% 0 1% 0%;
+	text-align: left;
 }
 
 

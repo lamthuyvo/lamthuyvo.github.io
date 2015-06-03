@@ -6,4 +6,6 @@ $(document).ready(function() {
 	$(".menu > li").mouseleave(function(){		
 		$(".submenu").css("display", "none");
 	});	
+
+	$('.ajmint-table').stacktable({myClass:'stacktable small-only'});
 });

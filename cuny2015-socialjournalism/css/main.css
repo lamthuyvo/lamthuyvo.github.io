@@ -71,18 +71,103 @@ h3{
 
 /* table styles */
 
+
+/* =============================================================================
+	  Table style 
+========================================================================== */
+   
 table{
-	width: 100%;
-}
-tr, td {
-	border-top: solid 1px #cccccc;
-	line-height: 2.5em;
+		width:100%;
+		/*margin: 25px 0;*/
 }
 
-thead{
-	text-align: left;
+tr:nth-of-type(even) { 
+  border-top: 1px solid #cccccc; 
+  border-bottom: 1px solid #cccccc;  
+  background: #FFF;
 }
 
+ td { 
+  font-family: Helvetica, Arial, sans-serif !important;
+  font-size: 12px;
+  color: #3f4245;
+  padding: 10px;
+  text-align: left;
+  -webkit-font-smoothing: antialiased;
+  font-smooth: always;
+  font-weight:100;
+  border-bottom: solid 1px #E2E1E1;
+  border-left: solid 1px #E2E1E1;
+}
+.right-border{
+	border-right: 1px solid #cccccc; 
+}
+
+th { 
+  padding: 6px;
+  text-align: left;
+  -webkit-font-smoothing: antialiased;
+  font-smooth: always;
+  font-weight: 100;
+  font-weight: 600;
+  border-top: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+  font-family: , Helvetica, Arial, sans-serif !important;
+  color: #13B782;
+  font-size: 1em;
+  background: #F3F2F2;
+}
+
+.tablesorter-header {
+  background-image: url(data:image/gif;base64,R0lGODlhFQAJAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAkAAAIXjI+AywnaYnhUMoqt3gZXPmVg94yJVQAAOw==);
+  background-position: center right;
+  background-repeat: no-repeat;
+  /*cursor: pointer;*/
+  white-space: normal;
+  padding: 4px 20px 4px 4px;
+  position: -webkit-sticky;
+}
+
+thead .tablesorter-headerAsc {
+  background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAQAAAINjI8Bya2wnINUMopZAQA7);
+  border-bottom: #D99C2C 3px solid;
+}
+
+thead .tablesorter-headerDesc {
+  background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAQAAAINjB+gC+jP2ptn0WskLQA7);
+  border-bottom: #D99C2C 3px solid;
+}
+
+ thead .sorter-false {
+  background-image: none;
+  padding: 4px;
+}
+
+
+
+/* =============================================================================
+ From stacktable.css
+========================================================================== */
+
+.stacktable { width: 100%; display:none;}
+.st-head-row { padding-top: 1em; }
+.st-head-row.st-head-row-main { font-size: 1.5em; padding-top: 0; }
+.st-key { width: 49%; text-align: right; padding-right: 1%; }
+.st-val { width: 49%; padding-left: 1%; }
+
+
+/* RESPONSIVE EXAMPLE */
+
+.stacktable.large-only { display: table; }
+.small-only { display: none; }
+
+
+@media (max-width: 800px) {
+	th { border-top: none}
+	td,th { padding: 0 6px;}
+  .large-only { display: none }
+  .stacktable.small-only { display: table; }
+}
 .training-main-canvas-700 .panel{
 	border-bottom: dotted 1px #00AF77;
 	padding-bottom: 1.5em;

@@ -1,0 +1,90 @@
+body {
+	padding: 0;  /*Gets rid of the automatic padding*/
+	margin: 0;	/*	on HTML documents */
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light","Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	color: #363636;
+	line-height: 1.5em;
+	-webkit-font-smoothing: antialiased;
+  	font-smooth: always;
+}
+
+code{
+	color: #D58900;
+}
+
+a {
+	color:#00AF77;
+	text-decoration: none;
+}
+
+a:hover {
+	color:#ffde17;
+
+}
+
+.tipsheet img{
+	border: solid 1px #cccccc;
+}
+
+
+.tipsheet img a:hover{
+	border: solid 1px #00AF77;
+}
+
+/* subhed styles */
+
+h1{
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light","Helvetica Neue", Helvetica, Arial, sans-serif;
+  	-webkit-font-smoothing: antialiased;
+  	font-smooth: always;
+  	font-weight: 100;
+	font-size: 2.3em;
+	padding: 1% 0 1% 0;
+	text-align: left;
+	line-height: 1em;
+
+}
+
+h2{
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light","Helvetica Neue", Helvetica, Arial, sans-serif;
+  	-webkit-font-smoothing: antialiased;
+  	font-smooth: always;
+  	font-weight: 100;
+	font-size: 2em;
+	padding: 1% 0 1% 0;
+	text-align:left;
+	color: #9C9C9C;
+	line-height: 1em;
+}
+
+h3{
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light","Helvetica Neue", Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	font-smooth: always;
+	font-weight: 100;
+	font-size: 1.4em;
+	padding: 1% 0 1% 0%;
+	text-align: left;
+}
+
+
+/* table styles */
+
+table{
+	width: 100%;
+}
+tr, td {
+	border-top: solid 1px #cccccc;
+	line-height: 2.5em;
+}
+
+thead{
+	text-align: left;
+}
+
+.training-main-canvas-700 .panel{
+	border-bottom: dotted 1px #00AF77;
+	padding-bottom: 1.5em;
+	padding-top: 1.5em;
+}

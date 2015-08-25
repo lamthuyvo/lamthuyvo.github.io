@@ -42,7 +42,7 @@ h1{
 	font-size: 2.3em;
 	padding: 1% 0 1% 0;
 	text-align: left;
-	line-height: 1em;
+	line-height: 1.2em;
 
 }
 
@@ -69,6 +69,21 @@ h3{
 }
 
 
+#lessons h4{
+	text-transform: uppercase;
+    color: #79B9A4;
+
+}
+
+
+#lessons h3{
+	color: #1E8C68;
+	text-transform: uppercase;
+	font-size: 1.2em;
+	font-weight: bold;
+	padding:50px 0 1% 0%;
+
+}
 /* table styles */
 
 table{

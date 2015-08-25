@@ -66,6 +66,7 @@ h3{
 	font-size: 1.4em;
 	padding: 1% 0 1% 0%;
 	text-align: left;
+	color:#808080;
 }
 
 
@@ -84,6 +85,14 @@ h3{
 	padding:50px 0 1% 0%;
 
 }
+
+
+.sourceline{
+	color:#ADADAD;
+	font-size: 0.9em;
+	font-style: italic;
+}
+
 /* table styles */
 
 table{

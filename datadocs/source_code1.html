@@ -1,0 +1,77 @@
+<a class="post" name="data-docs-the-open-source-overview"></a><br /><br />
+
+		<div class="content_body blog_entry">
+		<h2 class="title">Data Docs: The Open-Source Overview</h2>
+		<small>December 4th, 2013  <span>|</span>  <a href="http://www.datadocs.org/beta/category/general/" title="View all posts in General" rel="category tag">General</a>  <span>|</span>  Susan McGregor  <span>|</span>  <a href="http://www.datadocs.org/beta/data-docs-the-open-source-overview/#respond" title="Comment on Data Docs: The Open-Source Overview">No Comments</a></small>
+		
+		<div class="post-text">
+			<p>Thanks to lots of positive feedback and generous support from the Knight Foundation, what began more than a year ago as a <em>very</em> rough prototype of an interactive, data-driven web series has finally been refactored into the first components of a fully-fledged web platform that allows filmmakers, developers, journalists and storytellers of all kinds to create and share interactive videos online.</p>
+			<p>Although you&#8217;re welcome to go <a title="Data Docs GitHub repo" href="https://github.com/susanemcg/datadocs" target="_blank">straight for the code</a>, we wanted to highlight some of the major features that we think will be of interest if you&#8217;re curiou about making a Data Doc yourself:</p>
+			
+
+			<h4>A Basic &#8220;Data Doc&#8221;</h4>
+
+			<p>At its most fundamental, a Data Doc simply combines HTML web video with overlays of dynamic, interactive text, images and graphics, showing and hiding them according to the video&#8217;s playback position. The core component of the platform is the <span style="color: #008080; font-family: monospace; font-size: 14px;">datadoc</span> object, which automatically generates customized (and customizable) video controls, in addition to providing optional fullscreen support and embed options. Overlaid elements can be hard-coded to the page inside any <span style="color: #008080; font-family: monospace; font-size: 14px;">&lt;div&gt;</span> element that has a unique <span style="color: #008080; font-family: monospace; font-size: 14px;">id</span> attribute. Alternatively, Javascript and common libraries (like jQuery) can be used to write content dynamically to the page. However your <span style="color: #008080; font-family: monospace; font-size: 14px;">&lt;div&gt;</span>s get there, though, you can use the built-in <span style="color: #008080; font-family: monospace; font-size: 14px;">addSalt</span> and <span style="color: #008080; font-family: monospace; font-size: 14px;">addCaramel</span> methods to tie their visibility to the video timeline at any point up until the video starts playing.</p>
+			
+			<p>Ok, but what&#8217;s actually happening? To get a sense of this, it&#8217;s first helpful to understand how the pieces of a Data Doc webpage are organized. Below is a basic diagram:</p>
+
+			<p><a href="http://www.datadocs.org/beta/wp-content/uploads/2013/09/DataDocsHTMLOrg2Sized.png"><img class="alignnone size-full wp-image-280" alt="DataDocsHTMLOrg2Sized" src="http://www.datadocs.org/beta/wp-content/uploads/2013/09/DataDocsHTMLOrg2Sized.png" /></a></p>
+
+			<p>Or, looked at another way:</p>
+
+			<p><a href="http://www.datadocs.org/beta/wp-content/uploads/2013/10/DataDocsHTMLHierarchy.jpg"><img class="alignnone size-full wp-image-286" alt="DataDocsHTMLHierarchy" src="http://www.datadocs.org/beta/wp-content/uploads/2013/10/DataDocsHTMLHierarchy.jpg" width="634" height="717" /></a></p>
+
+
+			<h4>The Building Blocks</h4>
+
+			<h5>The &#8220;fullscreen&#8221; div</h5>
+
+			<p>Wrapping all the other pieces that make up a Data Doc is the &#8220;fullscreen_container&#8221; div, which is the element that will expand when a user puts the video into fullscreen mode. It&#8217;s essential that all other divs (the video, overlays, controls &amp;c.) live inside this div; otherwise, your overlays may get disconnected from your video or not scale properly, or you users might not be able to control playback in fullscreen mode.</p>
+
+			<p>Note that Data Docs scales your underlying video and overlays by a factor calculated from your original video dimensions and the size of the current screen, which means that small videos may appear pixellated if fullscreen is enabled. Because of this, fullscreen will <em>only</em> be available if you pass the name of this div to the Data Docs constructor, in which case, you <em>must</em> also include a div in your controls with an id of fullscreen_button.</p>
+
+			<h5>The video div</h5>
+
+			<p>Data Docs relies on the HTML5 video element for video rendering and control. In order to work properly across major browsers, you&#8217;ll need to make sure to include source types of <em>both</em> and ogv and webm, at least. You <em>must</em> specify the video size through an inline style attribute directly on the video div that matches the native dimensions of the video. You can set the default image that displays before the video is playing via the &#8220;poster&#8221; attribute. Finally, it is important that your video tag <em>not</em> include the &#8220;controls&#8221; attribute, as these will not interact properly with a standard Data Docs implementation. For example, a basic Data Doc video tag (taking the example from our current prototype) might look like this:</p>
+
+			<pre>
+			<video id="datadocsvid" poster="assets/graphElements/poster.png" style="width:800px; height:450px;">
+			       				<source src="assets/videoFiles/DataDoc1_MAINSEQ_v4.mp4" type="video/mp4">
+			        			<source type="video/ogg" src="assets/videoFiles/DataDoc1_MAINSEQ_v4.ogv">
+			        			<source type="video/webm" src="assets/videoFiles/DataDoc1_MAINSEQ_v4.webm">
+			      			</video>	
+			</pre>
+
+			<h5>The &#8220;overlays&#8221; div</h5>
+
+			<p>The overlays div is where the Data Doc will look for any element that is added to the timeline; note that the id of this div <em>must</em> be &#8220;overlays&#8221;. Whether hard-coded or added by scripting, this div is where any content that will appear in your Data Doc should live. This content can consist of any number of
+			<div> tags that have unique id parameters, and they can contain any type of content: images, text, even iframes. Data Docs can handle whatever type of media you want to show on top of your video, as long as it can be located.</p>
+
+			<h5>A simple example</h5>
+
+			<p>We expect that most people will want to use Data Docs to overlay dynamic text on their videos, so we&#8217;ve tried to make that particularly painless. Though our prototype uses an awesome custom-gif font (which you are also welcome to use) to render text, Data Docs also supports webfonts so you can make your Data Doc your own. To see how this works in action, take a look at our <a href="http://www.datadocs.org/prototype/webfonts-example/" title="Webfonts Example" target="_blank">simple webfonts example</a>. The code is broken down below.</p>
+			
+			<p><em>index.html</em><br />
+
+			For this example, we&#8217;ll just add a single piece of text to our Data Doc, by creating a <span style="color: #008080; font-family: monospace; font-size: 14px;">div</span> tag directly inside the the existing overlays div in our <span style="color: #008080; font-family: monospace; font-size: 14px;">index.html</span>. In our example, we&#8217;ve given that div an id of &#8220;my_text&#8221; and placed some &#8220;Really fantastic text&#8221; inside. </p>
+
+			<p>In order to make sure our new text is rendered in our webfont, we have to make sure to load the font at the top of the file. In our example, you can see we&#8217;ve loaded a font called &#8220;Tangerine&#8221; from Google&#8217;s webfonts directory near line 20.</p>
+
+			<p><em>main.js</em><br />
+
+			To make sure our text only shows when we want it, though, we have to tell our Data Doc when our new text div should be visible over our video. We do this via the call to <span style="color: #008080; font-family: monospace; font-size: 14px;">addSalt</div>
+
+			<p> you see in main.js. The start and end time are specified in seconds, and the id of our text div is passed in as well. You&#8217;ll notice that <span style="color: #008080; font-family: monospace; font-size: 14px;">addSalt</span> appears inside a standard jQuery document.ready() block; it&#8217;s important that any <span style="color: #008080; font-family: monospace; font-size: 14px;">addSalt</span> calls appear after the <span style="color: #008080; font-family: monospace; font-size: 14px;">data_doc</span> object is initialized, but still inside of document.ready().</p>
+
+		
+			<p><em>css/main.css</em><br />
+			In order to make sure our new text is actually rendered in our webfont, we have to make sure to style it inside our main.css file (inside the &#8220;css&#8221; folder). In addition to specifying our webfont in the <span style="color: #008080; font-family: monospace; font-size: 14px;">font-family</span> property, however, we also have to make sure indicate that our div should have <span style="color: #008080; font-family: monospace; font-size: 14px;">position:absolute;</span> and both its top and left properties specified (these will be calculated from the top left corner of the video). Not only does this give better control over where the text appears, it&#8217;s ensures that it is properly positioned when the video goes full screen.</p>
+			<p>And that&#8217;s it! All you need to do now is open the index.html file in a web browser (as long as it&#8217;s not Internet Explorer!) to see your video in action.</p>
+			<p>What&#8217;s next?</p>
+			<p>Well, chances are you&#8217;ll want to add more than one overlay to your Data Doc. You can do that by simply add more divs, more styles, and more calls to &#8220;addSalt&#8221; as we did above. At a certain point, however, that will get a bit tedious, which is why we created the &#8220;addLabels&#8221; method, which we&#8217;ll look at next.</p>
+</div>
+		
+		
+		<div class="meta"><a href="http://www.datadocs.org/beta/latest updates" class="more">Go Back</a></div>
+	
+	</div>

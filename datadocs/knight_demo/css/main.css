@@ -1,0 +1,142 @@
+/* It's important to make sure that any overlays have *absolute* positioning,
+	otherwise they won't position correctly in fullscreen mode */
+
+
+
+
+
+
+/* sharing overlay styles */
+
+.outline-box{
+    border: solid 1px white;
+    width: 20%;
+    height: 20%;
+    display: inline;
+    position: relative;
+    float:left;
+    cursor: pointer;
+}
+.arrow-down {
+width: 0;
+height: 0;
+border-top: 12px solid white;
+border-right: 8px solid transparent;
+border-left: 8px solid transparent;
+margin-left: 24%;
+margin-top: 24%
+}
+.optionFade{
+    opacity: 1;
+    -webkit-transition: opacity 1s ease-in;
+    -moz-transition: opacity 1s ease-in;
+    -o-transition: opacity 1s ease-in;
+    -ms-transition: opacity 1s ease-in;
+    transition: opacity 1s ease-in;
+}
+.noOp{
+    opacity: 0;
+}
+
+#embed_code{
+   background-color: #333333;
+    border: 3px solid #FFFFFF;
+    color: #FFFFFF;
+    font-family: Arial;
+    height: 1200%;
+    left: 5%;
+    position: absolute;
+    top: -1500%;
+    width: 80%;
+    padding:30px;
+}
+.codeHolder{
+    position: relative;
+    display: inline;
+    float: left;
+    width:60%;
+    height:140px;
+    border:solid 1px white;
+    margin-left: 20px;
+}
+
+#embedClose{
+    position:absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    top: 5%;
+    left: 95%;
+    cursor: pointer;
+}
+
+.embedOption{
+    font-family: Arial, sans-serif;
+    color:#fff;
+    border: solid 1px white;
+    width: 100px;
+    height: 20%;
+    position:relative;
+    display:inline;
+    float: left;
+    cursor: pointer;
+}
+.sizeList{
+    width: 140px;
+    height: 130px;
+    position: relative;
+    display:inline;
+    float:left;
+}
+
+
+
+/* do not modify */
+
+#loader_gif{
+    position:absolute;
+    top:35%;
+    left:40%;
+}
+
+body{
+	background-color:#222;
+	width:100%;
+	height:600px;
+	overflow: hidden;
+	padding: 0;
+	margin:0;
+	color:#FFFFFF;
+    font-family: Arial;
+}
+#all_info{
+	position:relative;
+	height:450px;
+	width:800px;
+	margin:0 auto;	
+	padding:0px;
+	background-color: #222222;	
+}
+#contentContainer{
+	width:100%;
+	text-align:center;
+	position:relative;
+	height:100%;
+	top:100px;
+	
+}
+#overlays{
+	width:100%;
+	height:100%;
+	top:0px;
+	position:absolute;
+	margin:0 auto;	
+	background-color: transparent;
+}
+.revealWrap{
+    text-align:left;
+    display: block;
+    float: none;
+    position: relative;
+    margin-right: 1em;
+}

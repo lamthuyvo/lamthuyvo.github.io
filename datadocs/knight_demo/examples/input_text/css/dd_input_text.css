@@ -1,0 +1,157 @@
+/* It's important to make sure that any overlays have *absolute* positioning,
+	otherwise they won't position correctly in fullscreen mode */
+
+#name_input{
+    position: absolute;
+    top: 260px;
+    left: 150px;
+    width: 500px;
+}
+#submit_button{
+    position: absolute;
+    top:240px;
+    left:600px;
+    border:solid 2px white;
+    width: 50px;
+    height: 30px;
+}
+.name_box{
+    font-size: 40px;
+    border-style: none;
+    background-color: transparent;
+    color: white;
+    font-family: Helvetica, Arial, sans-serif;
+    text-align: center;
+    font-weight: 100;
+}
+#name_ex1{
+    font-family: Helvetica, Arial, sans-serif;
+    color: #C5009E;
+    font-size: 40px;
+    position: absolute;
+    top: 108px;
+    left: 376px;
+    font-weight: 100;
+    text-align: center;
+}
+/*#name_ex2{
+    font-family:'Arimo', sans-serif;
+    color:#ff0000;
+    font-size: 28px;
+    position: absolute;
+    top:50px;
+    left:410px;
+}
+#name_ex3{
+    font-family:'Arimo', sans-serif;
+    color:blue;
+    font-size: 28px;
+    position: absolute;
+    top:200px;
+    left:300px;
+}
+#name_ex4{
+    font-family:'Arimo', sans-serif;
+    color:black;
+    font-size: 28px;
+    position: absolute;
+    top:180px;
+    left:450px;
+}*/
+#repo_link{
+    font-family: Helvetica, Arial, sans-serif;
+    color: #FFFFFF;
+    font-size: 3em;
+    left: 205px;
+    position: absolute;
+    top: 170px;
+    font-weight: 100;
+    text-align: center;
+}
+
+#repo_link a{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+#repo_link a:hover{
+    color: #FF00EB;
+}
+
+#clock_time{
+    font-size: 72px;
+    left: 300px;
+    position: absolute;
+    top: 192px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 100;
+}
+
+
+#sample_chart{
+    position:absolute;
+    top: 10px;
+    left: 70px;
+    width:650px;
+    height: 450px;
+}
+#repo_link2{
+    color: #FFFFFF;
+    font-family: Helvetica, sans-serif;
+    font-size: 40px;
+    left: 250px;
+    position: absolute;
+    top: 100px; 
+    font-weight: 100;
+}
+
+#repo_link2 a{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+#repo_link2 a:hover{
+    color: #FF00EB;
+}
+
+#mailto_link{
+    color: #FFFFFF;
+    font-family: Helvetica, sans-serif;
+    font-size: 40px;
+    left: 250px;
+    position: absolute;
+    top: 300px;
+    font-weight: 100;
+}
+
+#mailto_link a{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+#mailto_link a:hover{
+    color: #FF00EB;
+}
+
+
+
+/*
+http://www.sitepoint.com/css3-glowing-link-effect/
+*/
+.glow, .glow:hover, .glow:focus
+{
+    text-decoration: none;
+    text-shadow: none;
+    -webkit-transition: 500ms linear 0s;
+    -moz-transition: 500ms linear 0s;
+    -o-transition: 500ms linear 0s;
+    transition: 500ms linear 0s;
+    outline: 0 none;
+}
+
+.glow:hover, .glow:focus
+{
+    color: #fff;
+    text-shadow: -1px 1px 8px #ffc, 1px -1px 8px #fff;
+}
+
